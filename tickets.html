@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Codo a Codo - Conf Bs As</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="shortcut icon" href="img/codoacodo.png" type="image/x-icon" />
+  </head>
+  <body>
+    <!--HEADER NAV-->
+    <nav
+      class="navbar navbar-expand-lg navbar-dark bg-dark d-flex justify-content-around"
+    >
+      <div class="container-fluid">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="img/codoacodo.png"
+            alt="codo a codo"
+            width="100"
+            height="auto"
+          />
+          <span class="mx-1">Conf Bs As</span>
+        </a>
+
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarTogglerDemo01"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div
+          class="collapse navbar-collapse justify-content-end"
+          id="navbarTogglerDemo01"
+        >
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#"
+                >La conferencia</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#oradores">Los oradores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#lugares">El lugar y la fecha</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#anotate">Conviertete en orador</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-success" href="tickets.html"
+                >Comprar tickets</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!--FORMULARIO TICKETS-->
+    <h1 class="text-center p-2 m-2">Compra de tickets</h1>
+    <!--
+
+    
+    <div class="container my-3">
+      <form action="server/procesarCompraTicket.html" method="post">
+        <div class="row mb-3">
+          <div class="col">
+            <input
+              type="text"
+              name="cant"
+              id="cant"
+              onkeyup="calcTotal()"
+              placeholder="Cantidad Tickets"
+              class="form-control"
+            />
+            <div class="small">Valor Ticket $1000</div>
+          </div>
+          <div class="col">Total a pagar $: <span id="total">0</span></div>
+        </div>
+        <div class="row mb-3">
+          <input type="submit" value="Comprar" class="btn btn-primary" />
+        </div>
+      </form>
+    </div>
+    -->
+
+    <div class="container">
+      <form class="row g-3">
+        <div class="col-md-6">
+          <label for="inputNombre" class="form-label">Nombre</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Ingrese nombre"
+            id="inputNombre"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="inputApellido" class="form-label">Apellido</label>
+          <input
+            type="text"
+            class="form-control"
+            placeholder="Ingrese apellido"
+            id="inputApellido"
+          />
+        </div>
+        <div class="col-md-6">
+          <label for="cantidadTickets">Cantidad de tickets</label>
+          <select
+            class="form-select"
+            id="cantidadTickets"
+            aria-label="Selecciona cantidad de tickets"
+          >
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </select>
+          <p class="small text-black-50 mt-1 px-2">Valor de ticket $1000</p>
+        </div>
+        <div class="col-md-6">
+          <label for="descuento">Seleccione su perfil</label>
+          <select
+            name=""
+            id="descuento"
+            class="form-select"
+            onchange="validarDescuento()"
+          >
+            <option value="0">Seleccionar</option>
+            <option value="50">Estudiante 50%</option>
+            <option value="30">Profesional 30%</option>
+            <option value="10">Orador 10%</option>
+            <option value="01">Otros 1%</option>
+          </select>
+        </div>
+
+        <div class="col-12">
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="gridCheck" />
+            <label class="form-check-label" for="gridCheck">
+              Acepto terminos y condiciones
+            </label>
+          </div>
+        </div>
+
+        <div class="precioTotal"></div>
+
+        <div class="col-12">
+          <button type="submit" class="btn btn-primary">Comprar</button>
+        </div>
+      </form>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
